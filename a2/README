@@ -1,0 +1,156 @@
+Steven Colburn
+masc0974
+CS570
+Assignment#2
+README
+
+File Manifest
+a2.cc
+pagefile.cc
+pagefile.h
+Makefile
+README
+
+Use cd to go to the folder a2 in command prompt.
+Type make to create program a2.
+Running a2 will bring up a prompt to either type help for more commands
+or to enter a number between [0-100] for the number of page frames.
+Typing help brings up commands that may also be typed into the command prompt.
+Such commands are:
+
+First:   |Type any number from [1-99] for the main program to start.
+Second:  |Enter [end] or [exit] to terminate the program.
+Third:   |Enter [create_(0-2)] to create a pages.txt to test.
+Example: |[create_0]
+Fourth:  |Enter [clear] to clear any data in pages.txt.
+Fifth:   |Enter [custom] to create your own pages.txt.
+Sixth:   |Enter [c3] to create example from Chapter 3 Slide #42.
+Seventh: |Enter [current] to print to screen current sequence.
+
+[create_0] and [create_1] are made in order to test out different sequences to be
+used for testing the page replacement algorithms.
+
+create_0:
+1 4 6 3 10 4 55 45 55 21 3 6 9 4 1 2 5 8 7 4 1 2 5 8 9 6 3 2 44 22 11 25 86 99 99 41 25 25 66 99 1 1 1 88
+create_1: Old
+7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1
+create_1: New
+7 9 1 2 9 3 9 4 2 3 9 3 2 1 2 9 1 7 9 1
+create_2:
+1 2 3 4 1 2 5 1 2 3 4 5
+c3:
+2 3 2 1 5 2 4 5 3 2 5 2
+
+Lessons Learned:
+New type of error encounter
+BUS Error
+Very difficult but similiar to segmentation faults when debugging
+Learned how to create dynamic arrays
+Need to start working earlier on prgramming assignments
+
+Conclusion:
+
+***************old******************
+
+create_0:
+
+frames: 9
+OPT faults: 29
+LRU faults: 23
+FIFO faults: 27
+CLOCK faults: 27
+
+frames: 12
+OPT faults: 26
+LRU faults: 23
+FIFO faults: 23
+CLOCK faults: 25
+
+create_1:
+
+frames: 2
+OPT faults: 18
+LRU faults: 17
+FIFO faults: 15
+CLOCK faults: 15
+
+frames: 3
+OPT faults: 15
+LRU faults: 12
+FIFO faults: 15
+CLOCK faults: 14
+
+frames: 5
+OPT faults: 8
+LRU faults: 7
+FIFO faults: 9
+CLOCK faults: 9
+
+***************new******************
+
+create_0:
+
+frames: 9
+OPT faults: 22
+LRU faults: 23
+FIFO faults: 27
+CLOCK faults: 27
+
+frames: 12
+OPT faults: 22
+LRU faults: 23
+FIFO faults: 23
+CLOCK faults: 25
+
+create_1:
+
+frames: 2
+OPT faults: 13
+LRU faults: 17
+FIFO faults: 15
+CLOCK faults: 15
+
+frames: 3
+OPT faults: 9
+LRU faults: 12
+FIFO faults: 15
+CLOCK faults: 14
+
+frames: 5
+OPT faults: 7
+LRU faults: 7
+FIFO faults: 9
+CLOCK faults: 9
+
+
+
+Faults also count the initial loading of files into the frames. I have found from my results that LRU works
+best under the conditions I tested them on. THe more frames there are the less faults there are for LRU
+when compared to the other algorithms. I'm pretty confident the code for LRU and FIFO and CLOCK works properly.
+Although I'm unsure if everything I wrote for OPT is working normally. I fixed a bug in the code for OPT and
+everthing now seems to wrok properly for it. It was a case when it started getting to the end and
+there was no new furture values related to the values in the frame. I believe my fix makes it work properly though.
+
+Update:
+After getting more time to work on code. Made many new changes. First thing I improved on my optimal code.
+It should be working properly now. Before LRU and occasionally other algorithms were doing better than it.
+But now it seems to be working the best. I used the example from chapter 3 slide #42 to test problems out.
+They all seem to match the proper faults from the slide.
+
+New additions:
+Added command [custom]. User can enter in numbers between 0 and 100 and when they enter [done] it will write out
+too pages.txt in order to test with. Added [create_2] and [c3]. Modified help command so entering in 
+[help] or [?] will show commands available. Typing in [ans] will show the number of faults c3 should be getting with
+3 frames. Typing in either end or exit will close the program. Changed code so it will keepprompting user until they 
+enter in a command to close the program. Added [current] which prints to screen the current 
+sequence of numbers from pages.txt.
+
+Added warning when entering into help. Unsure why but calculation for faults can get messed up
+only noticed it when I creating a new file with different sequence using the commands. 
+Fault calculation starts working again after refreshing prgram. Unsure why though.
+Faults is a local varuable not global so there should be no interference. Therefore I 
+made it when creating a new file from the commands to close the program.
+
+As far as I am aware all algorithms are working properly.
+
+/*End of File*/

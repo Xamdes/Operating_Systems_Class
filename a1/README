@@ -1,0 +1,33 @@
+Steven Colburn
+masc0974
+CS570
+Assignment#1
+README
+
+File Manifest
+a1.cc
+functions.cc
+functions.h
+Makefile
+README
+
+Use cd to go to folder in command prompt
+type make to create program sem
+typing make clean will clean all *.o and delete sem
+typing make remtxt will remove the PTAB.txt file,
+which is created after running sem
+
+When using sem type sem in command prompt and hit enter to start the executable
+Enter 1 to run the program or enter anything else and it will quit.
+
+The methods in functions.cc are made to be modular so it could potentially 
+be used for other applications with few adjustments.
+
+I have not found any bugs so far.
+
+Lessons Learned:
+	Never underestimate where to properly place sem_wait and sem_post
+It was difficult learning to deal with race conditions.
+	Man pages is everybodys best friend.
+	Becareful where global variables are placed there is a difference between 
+variables in a header file *.h and a source file *.cc.
