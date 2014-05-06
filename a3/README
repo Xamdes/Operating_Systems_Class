@@ -1,0 +1,43 @@
+Steven Colburn
+masc0974
+CS570
+Assignment#3
+README
+
+File Manifest
+a3.cc
+functions.cc
+functions.h
+variables.cc
+variables.h
+convert.cc
+convert.h
+error_exception.h
+import.h
+Makefile
+README
+
+Use cd to go to the folder a3 in command prompt.
+Type make to create the program a3.
+Running a3 will bring up a prompt to either type help for more commands
+or to enter a number in seconds for how long the program to run.
+Only entering the exit commands will cause the program to stop, else
+it will just come to the prompt again after running the prgram.
+Typing help brings up commands that may also be typed into the command prompt.
+Such commands are:
+
+First:   |Type any number from for the main program.
+Second:  |Enter [end] or [exit] to terminate the program.
+Third:   |Type [default] to reset the number back to default [6].
+Fourth:	 |Type any number greater than [0] for the time in seconds the program should run for.
+
+Lessons Learned:
+Creating Shared Memory is difficult, but well worth the trouble. Finding the code to use shared 
+memory was relatively easy. Thank you stackoverflow It took me awhile though to figure out what 
+each command does when declaring a shared memory space.
+
+Conclusion:
+
+This project was a fun learning experience.
+
+/*EOF*/
